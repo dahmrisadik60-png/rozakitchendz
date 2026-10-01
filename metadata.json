@@ -1,0 +1,6 @@
+{
+  "name": "Dahmri Store - متجر دحمري لطلب ساعة ألترا بريميوم",
+  "description": "صفحة هبوط احترافية لطلب ساعة الترا تيتانيوم الذكية بالدفع عند الاستلام وتوصيل 58 ولاية بإشراف صادق دحمري",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

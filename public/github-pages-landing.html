@@ -1,0 +1,620 @@
+<!-- This file is also available at /standalone-github-pages/index.html for direct deployment to GitHub Pages repository root -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rozakitchendz - قلاية فيليبس سمارت XXL الأوروبية الأصلية</title>
+  <meta name="description" content="متجر Rozakitchendz - قلاية فيليبس سمارت XXL الأوروبية الأصلية 7.2 لتر بدون زيت، توصيل لـ 69 ولاية جزائرية، الدفع عند الاستلام بعد المعاينة" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+
+  <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0RKnax2YL30wG4NNfZCxhOMHyfU5zsG52NmZwpq283QK9FAb2"></script>
+
+  <style>
+    :root {
+      --primary: #f43f5e;
+      --primary-hover: #e11d48;
+      --primary-light: rgba(244, 63, 94, 0.15);
+      --bg: #0d080b;
+      --card-bg: #140c11;
+      --card-inner: #190e15;
+      --border: #2e1622;
+      --border-highlight: rgba(244, 63, 94, 0.4);
+      --text-main: #f4f4f5;
+      --text-muted: #a1a1aa;
+      --emerald: #10b981;
+      --font-family: 'Tajawal', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background-color: var(--bg); color: var(--text-main); line-height: 1.6; direction: rtl; text-align: right; overflow-x: hidden; scroll-behavior: smooth; }
+    
+    .announcement-bar { background: linear-gradient(90deg, #f43f5e, #fb7185, #f43f5e); color: #0d080b; padding: 8px 16px; font-size: 13px; font-weight: 900; text-align: center; position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .pulse-dot { width: 8px; height: 8px; background: #0d080b; border-radius: 50%; }
+
+    header { background: rgba(17, 11, 15, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 12px 20px; position: sticky; top: 36px; z-index: 40; }
+    .header-container { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .brand-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .brand-badge { width: 38px; height: 38px; background: linear-gradient(135deg, #f43f5e, #ec4899); color: white; font-size: 20px; font-weight: 900; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+    .brand-name { font-size: 18px; font-weight: 900; color: white; }
+    .brand-tag { font-size: 11px; color: var(--primary); display: block; margin-top: -3px; }
+    .btn-header-cta { background: linear-gradient(270deg, #f43f5e, #fb7185); color: #0d080b; font-weight: 900; font-size: 13px; padding: 9px 18px; border-radius: 12px; border: none; cursor: pointer; text-decoration: none; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+    .hero-section { padding: 30px 0 50px 0; }
+    .hero-grid { display: grid; grid-template-columns: 1fr; gap: 30px; align-items: center; }
+    @media (min-width: 850px) { .hero-grid { grid-template-columns: 1fr 1fr; gap: 50px; } }
+
+    .hero-media { position: relative; border-radius: 28px; overflow: hidden; background: var(--card-bg); border: 1px solid var(--border); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); }
+    .hero-img { width: 100%; height: auto; display: block; aspect-ratio: 4/3; object-fit: cover; }
+    .badge-float { position: absolute; top: 14px; right: 14px; background: rgba(17, 11, 15, 0.9); border: 1px solid var(--border-highlight); padding: 6px 14px; border-radius: 10px; font-size: 12px; font-weight: 700; color: #fecdd3; }
+    .discount-badge { position: absolute; top: 14px; left: 14px; background: linear-gradient(135deg, #f43f5e, #e11d48); color: white; font-size: 13px; font-weight: 900; padding: 6px 12px; border-radius: 10px; }
+    
+    .kicker { display: inline-block; background: var(--primary-light); border: 1px solid var(--border-highlight); color: #fda4af; font-size: 12px; font-weight: 800; padding: 5px 14px; border-radius: 20px; margin-bottom: 12px; }
+    h1 { font-size: 28px; font-weight: 900; line-height: 1.3; color: #ffffff; margin-bottom: 14px; }
+    @media (min-width: 600px) { h1 { font-size: 38px; } }
+    .hero-desc { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px; }
+
+    .price-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 22px; padding: 20px; margin-bottom: 20px; }
+    .price-row { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .price-current { font-size: 34px; font-weight: 900; color: var(--primary); }
+    .price-old { font-size: 18px; color: #71717a; text-decoration: line-through; margin-right: 10px; }
+    .cod-badge { background: #2a111a; color: #fecdd3; border: 1px solid #4c1d2e; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 10px; }
+
+    .scarcity-box { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
+    .scarcity-text { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
+    .scarcity-bar { height: 8px; background: #1c1016; border-radius: 6px; overflow: hidden; }
+    .scarcity-fill { width: 86%; height: 100%; background: linear-gradient(90deg, #f43f5e, #fb7185); }
+
+    .countdown-card { background: var(--card-bg); border: 1px solid var(--border-highlight); border-radius: 20px; padding: 16px; margin-bottom: 20px; }
+    .countdown-header { font-size: 12px; font-weight: 800; color: #fda4af; margin-bottom: 10px; }
+    .countdown-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; direction: ltr; }
+    .countdown-digit-box { background: var(--card-inner); border: 1px solid var(--border); border-radius: 12px; padding: 10px 4px; text-align: center; }
+    .countdown-num { font-size: 24px; font-weight: 900; color: white; font-family: monospace; display: block; }
+    .countdown-label { font-size: 11px; color: var(--text-muted); direction: rtl; }
+
+    .btn-main-order { display: block; width: 100%; background: linear-gradient(270deg, #f43f5e, #fb7185, #f43f5e); color: #0d080b; font-size: 18px; font-weight: 900; padding: 16px 24px; border-radius: 18px; text-align: center; text-decoration: none; border: none; cursor: pointer; box-shadow: 0 10px 30px rgba(244, 63, 94, 0.35); }
+    .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; text-align: center; }
+    .trust-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 10px 6px; }
+    .trust-title { font-size: 12px; font-weight: 800; color: white; display: block; }
+    .trust-sub { font-size: 10px; color: var(--text-muted); }
+
+    .order-section { padding: 50px 0; background: #0f090d; border-top: 1px solid var(--border); }
+    .form-wrapper { max-width: 650px; margin: 0 auto; background: var(--card-bg); border: 2px solid var(--border); border-radius: 28px; padding: 24px; }
+    .section-title { text-align: center; margin-bottom: 24px; }
+    .section-title h2 { font-size: 24px; font-weight: 900; color: white; }
+    .section-title p { font-size: 13px; color: var(--text-muted); margin-top: 6px; }
+
+    .upsell-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 24px; }
+    @media (min-width: 500px) { .upsell-grid { grid-template-columns: 1fr 1fr; } }
+    .upsell-card { position: relative; background: var(--card-inner); border: 2px solid var(--border); border-radius: 18px; padding: 16px; cursor: pointer; }
+    .upsell-card.active { border-color: var(--primary); background: #24131e; }
+    .upsell-badge { position: absolute; top: -10px; right: 14px; background: linear-gradient(90deg, #f43f5e, #fb7185); color: white; font-size: 10px; font-weight: 900; padding: 2px 8px; border-radius: 10px; }
+    .upsell-title { font-size: 14px; font-weight: 800; color: white; }
+    .upsell-price { font-size: 18px; font-weight: 900; color: var(--primary); margin-top: 4px; }
+    .upsell-sub { font-size: 11px; color: var(--emerald); font-weight: 600; margin-top: 2px; }
+
+    .form-group { margin-bottom: 16px; }
+    .form-label { display: block; font-size: 12px; font-weight: 700; color: #e4e4e7; margin-bottom: 6px; }
+    .form-label span { color: var(--primary); }
+    .form-input, .form-select { width: 100%; background: #180e14; border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px; font-size: 14px; color: white; font-family: inherit; outline: none; }
+    .form-input:focus, .form-select:focus { border-color: var(--primary); }
+    .form-input.error { border-color: #ef4444; background: rgba(239, 68, 68, 0.05); }
+    .error-msg { color: #f87171; font-size: 11px; font-weight: 600; margin-top: 4px; display: none; }
+    .error-msg.visible { display: block; }
+
+    .delivery-toggle { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 6px; }
+    .delivery-btn { background: #180e14; border: 1px solid var(--border); padding: 12px; border-radius: 14px; color: var(--text-muted); cursor: pointer; text-align: right; font-family: inherit; }
+    .delivery-btn.active { background: #24131e; border-color: var(--primary); color: white; font-weight: 700; }
+    .delivery-fee-badge { font-size: 11px; color: var(--primary); display: block; font-weight: 800; margin-top: 2px; }
+
+    .invoice-summary { background: var(--card-inner); border: 1px solid var(--border); border-radius: 20px; padding: 18px; margin: 20px 0; }
+    .summary-line { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-muted); padding-bottom: 8px; margin-bottom: 8px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+    .summary-line.total { border-bottom: none; color: white; font-size: 16px; font-weight: 900; }
+    .total-price-val { font-size: 24px; color: var(--primary); font-weight: 900; }
+
+    .receipt-container { display: none; background: var(--card-bg); border: 2px solid var(--primary); border-radius: 28px; padding: 24px; margin-top: 20px; }
+    .receipt-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 20px; border-bottom: 1px solid var(--border); margin-bottom: 20px; flex-wrap: wrap; gap: 14px; }
+    .receipt-meta { background: #1e1119; border: 1px solid var(--border-highlight); padding: 8px 16px; border-radius: 14px; text-align: left; }
+    .receipt-id { font-family: monospace; font-size: 20px; font-weight: 900; color: var(--primary); display: block; }
+    .receipt-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13px; }
+    .receipt-table tr { border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+    .receipt-table td { padding: 10px 0; }
+    .receipt-table td:first-child { color: var(--text-muted); }
+    .receipt-table td:last-child { text-align: left; font-weight: 700; color: white; }
+    .receipt-actions { display: flex; flex-direction: column; gap: 10px; }
+    @media (min-width: 500px) { .receipt-actions { flex-direction: row; } }
+    .btn-whatsapp { flex: 1; background: #059669; color: white; font-weight: 800; font-size: 14px; padding: 14px; border-radius: 14px; text-align: center; text-decoration: none; }
+    .btn-print { background: #23141f; border: 1px solid var(--border); color: white; font-weight: 700; padding: 14px 20px; border-radius: 14px; cursor: pointer; }
+
+    .toast-social-proof { position: fixed; bottom: 80px; left: 16px; z-index: 45; max-width: 320px; background: rgba(22, 13, 19, 0.95); backdrop-filter: blur(10px); border: 1px solid var(--border-highlight); border-radius: 18px; padding: 12px 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); display: flex; align-items: center; gap: 12px; transition: transform 0.3s ease, opacity 0.3s ease; transform: translateY(120%); opacity: 0; }
+    .toast-social-proof.show { transform: translateY(0); opacity: 1; }
+    .toast-icon { width: 38px; height: 38px; background: linear-gradient(135deg, #f43f5e, #fb7185); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; }
+    .toast-content { font-size: 11px; color: #e4e4e7; }
+    .toast-name { font-weight: 800; color: white; display: block; }
+    .toast-time { color: var(--emerald); font-size: 10px; }
+
+    .mobile-sticky-bar { position: fixed; bottom: 0; right: 0; left: 0; background: rgba(13, 8, 11, 0.96); backdrop-filter: blur(12px); border-top: 1px solid var(--border); padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; z-index: 40; }
+    @media (min-width: 768px) { .mobile-sticky-bar { display: none; } }
+    footer { padding: 40px 0 90px 0; background: #0a0608; border-top: 1px solid var(--border); font-size: 12px; color: #71717a; text-align: center; }
+  </style>
+</head>
+<body>
+
+  <aside class="announcement-bar">
+    <span class="pulse-dot"></span>
+    <span>توصيل سريع لـ 69 ولاية | الدفع عند الاستلام بعد معاينة المنتج</span>
+  </aside>
+
+  <header>
+    <div class="header-container">
+      <a href="#" class="brand-logo">
+        <div class="brand-badge">R</div>
+        <div>
+          <span class="brand-name">Rozakitchendz</span>
+          <span class="brand-tag">الكتروميناج أوروبي معتمد CE</span>
+        </div>
+      </a>
+      <a href="#order-form" class="btn-header-cta">اطلب الآن (الدفع عند الباب)</a>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-media">
+          <img
+            src="https://images.unsplash.com/photo-1585515320310-259814833e62?auto=format&fit=crop&w=900&q=80"
+            alt="قلاية فيليبس سمارت XXL الأوروبية"
+            class="hero-img"
+          />
+          <div class="badge-float">معايير الجودة الأوروبية الأصلية CE</div>
+          <div class="discount-badge">تخفيض 37%</div>
+        </div>
+
+        <div>
+          <span class="kicker">أفضل جهاز الكتروميناج أوروبي للمطبخ الجزائري 2026</span>
+          <h1>قلاية فيليبس سمارت XXL الأوروبية الرقمية بدون زيت</h1>
+          <p class="hero-desc">
+            طهي صحي ومقرمش بنسبة دهون أقل 90% مع سعة عائلية ضخمة 7.2 لتر. تصميم روز جولد ميتاليك أنيق مع 16 برنامج طهي ذكي وشاشة لمس ديجيتال موفرة للطاقة (A+++).
+          </p>
+
+          <div class="price-box">
+            <div class="price-row">
+              <div>
+                <span class="price-current" id="hero-display-price">14,800 دج</span>
+                <span class="price-old">23,500 دج</span>
+              </div>
+              <span class="cod-badge">الدفع عند الاستلام (معاينة حرة)</span>
+            </div>
+
+            <div class="scarcity-box">
+              <div class="scarcity-text">
+                <span>الكمية المتبقية بسعر العرض:</span>
+                <strong style="color: var(--primary);">6 قطع فقط في المخزون</strong>
+              </div>
+              <div class="scarcity-bar"><div class="scarcity-fill"></div></div>
+            </div>
+          </div>
+
+          <div class="countdown-card">
+            <div class="countdown-header">🔥 ينتهي عرض التخفيض الأوروبي الحصري خلال:</div>
+            <div class="countdown-grid">
+              <div class="countdown-digit-box"><span class="countdown-num" id="cd-hours">11</span><span class="countdown-label">ساعة</span></div>
+              <div class="countdown-digit-box"><span class="countdown-num" id="cd-minutes">42</span><span class="countdown-label">دقيقة</span></div>
+              <div class="countdown-digit-box"><span class="countdown-num" id="cd-seconds">18</span><span class="countdown-label">ثانية</span></div>
+            </div>
+          </div>
+
+          <a href="#order-form" class="btn-main-order">املأ استمارة الطلب (الدفع بعد المعاينة)</a>
+
+          <div class="trust-grid">
+            <div class="trust-card"><span class="trust-title">🚚 69 ولاية</span><span class="trust-sub">شحن سريع 24-48 ساعة</span></div>
+            <div class="trust-card"><span class="trust-title">🛡️ معاينة حرة</span><span class="trust-sub">افحص طردك قبل الدفع</span></div>
+            <div class="trust-card"><span class="trust-title">⭐ ضمان سنتين</span><span class="trust-sub">استبدال رسمي معتمد</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="order-form" class="order-section">
+    <div class="container">
+      <div class="form-wrapper">
+        <div class="section-title">
+          <h2>استمارة الحجز المباشر بالدفع عند الاستلام</h2>
+          <p>أدخل بياناتك وسنتصل بك فوراً لتأكيد إرسال الطرد مع شركة التوصيل</p>
+        </div>
+
+        <form id="purchase-form" novalidate>
+          <div class="form-group">
+            <label class="form-label">1. اختر العرض المناسب لك (عروض التوفير الذكية):</label>
+            <div class="upsell-grid">
+              <div class="upsell-card active" id="card-single" onclick="selectOffer('single')">
+                <div class="upsell-title">قطعة واحدة (جهاز فردي)</div>
+                <div class="upsell-price">14,800 دج</div>
+                <div class="upsell-sub" style="color: var(--text-muted);">القلاية الأصلية كاملة مع شبكة الشواء</div>
+              </div>
+
+              <div class="upsell-card" id="card-duo" onclick="selectOffer('duo')">
+                <div class="upsell-badge">أعلى توفير + شحن مجاني 0 دج 🔥</div>
+                <div class="upsell-title">قطعتان (لكِ ولأختكِ)</div>
+                <div class="upsell-price">26,900 دج</div>
+                <div class="upsell-sub">توصيل مجاني لـ 69 ولاية + هدايا</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="cust-name">الاسم واللقب بالكامل: <span>*</span></label>
+            <input type="text" id="cust-name" class="form-input" placeholder="مثال: أسماء بن حمزة" required />
+            <div class="error-msg" id="name-error">يرجى كتابة الاسم واللقب بالكامل.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="cust-phone">رقم الهاتف المحمول (10 أرقام): <span>*</span></label>
+            <input type="tel" id="cust-phone" class="form-input" dir="ltr" placeholder="05 / 06 / 07 XX XX XX XX" maxlength="10" required />
+            <div class="error-msg" id="phone-error">يرجى إدخال رقم هاتف جزائري صحيح مكون من 10 أرقام (مثال: 0661xxxxxx)</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="wilaya-select">الولاية (تغطية كاملة لـ 69 ولاية): <span>*</span></label>
+            <select id="wilaya-select" class="form-select" onchange="handleWilayaChange()"></select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="cust-commune">البلدية أو الدائرة: <span>*</span></label>
+            <input type="text" id="cust-commune" class="form-input" placeholder="مثال: دالي براهيم، حيدرة..." required />
+            <div class="error-msg" id="commune-error">يرجى كتابة البلدية.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">مكان استلام الطرد:</label>
+            <div class="delivery-toggle">
+              <button type="button" id="btn-delivery-home" class="delivery-btn active" onclick="setDeliveryType('home')">
+                توصيل لباب المنزل
+                <span class="delivery-fee-badge" id="home-fee-label">400 دج</span>
+              </button>
+              <button type="button" id="btn-delivery-desk" class="delivery-btn" onclick="setDeliveryType('desk')">
+                استلام من المكتب (Stop Desk)
+                <span class="delivery-fee-badge" id="desk-fee-label">250 دج</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="cust-address">العنوان بالتفصيل أو الحي (اختياري):</label>
+            <input type="text" id="cust-address" class="form-input" placeholder="مثال: حي البساتين فيلا رقم 14" />
+          </div>
+
+          <div class="invoice-summary">
+            <div class="summary-line"><span>سعر الجهاز:</span><strong id="summary-prod-price">14,800 دج</strong></div>
+            <div class="summary-line"><span>رسوم التوصيل:</span><strong id="summary-deliv-fee" style="color: var(--emerald);">400 دج</strong></div>
+            <div class="summary-line total"><span>المجموع الإجمالي (الدفع عند الاستلام):</span><span class="total-price-val" id="summary-total-price">15,200 دج</span></div>
+          </div>
+
+          <button type="submit" id="submit-btn" class="btn-main-order">اطلب الآن وافتح طردك قبل الدفع</button>
+        </form>
+
+        <div id="official-receipt" class="receipt-container">
+          <div class="receipt-header">
+            <div>
+              <div class="brand-logo" style="margin-bottom: 6px;">
+                <div class="brand-badge">R</div>
+                <div><span class="brand-name">Rozakitchendz</span><span class="brand-tag">فاتورة طلب رسمية ومؤكدة</span></div>
+              </div>
+              <p style="font-size: 11px; color: var(--text-muted);">إشراف: صادق دحمري · الجزائر العاصمة</p>
+            </div>
+            <div class="receipt-meta">
+              <span style="font-size: 10px; color: var(--text-muted);">رقم الفاتورة:</span>
+              <span class="receipt-id" id="rcpt-id">#ROZA-9821</span>
+              <span style="font-size: 10px; color: var(--emerald);">● مؤكد للدفع عند الاستلام</span>
+            </div>
+          </div>
+
+          <div style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); padding: 12px; border-radius: 14px; margin-bottom: 20px;">
+            <strong style="color: #6ee7b7; font-size: 13px;">تهانينا! تم تسجيل طلبك بنجاح.</strong>
+            <p style="font-size: 11px; color: #d1fae5; margin-top: 2px;" id="rcpt-phone-note">سيتصل بك موزع التوصيل لتأكيد موعد استلام الطرد.</p>
+          </div>
+
+          <table class="receipt-table">
+            <tr><td>الاسم الكامل:</td><td id="rcpt-name">-</td></tr>
+            <tr><td>رقم الهاتف:</td><td id="rcpt-phone" dir="ltr" style="text-align: left; font-family: monospace;">-</td></tr>
+            <tr><td>الولاية والبلدية:</td><td id="rcpt-location">-</td></tr>
+            <tr><td>طريقة الاستلام:</td><td id="rcpt-type">-</td></tr>
+            <tr><td>المنتج المطلوب:</td><td id="rcpt-product">قلاية فيليبس سمارت XXL الأوروبية</td></tr>
+            <tr><td>باقة العرض:</td><td id="rcpt-pack">-</td></tr>
+            <tr><td>تكلفة الشحن:</td><td id="rcpt-shipping" style="color: var(--emerald);">-</td></tr>
+            <tr style="font-size: 16px; border-top: 2px solid var(--border);"><td style="color: white; font-weight: 800;">المجموع المستحق عند الاستلام:</td><td id="rcpt-total" style="color: var(--primary); font-size: 20px; font-weight: 900;">-</td></tr>
+          </table>
+
+          <div class="receipt-actions">
+            <a href="#" id="rcpt-wa-btn" target="_blank" class="btn-whatsapp">💬 إرسال تأكيد فوري عبر الواتساب للمتجر</a>
+            <button type="button" onclick="window.print()" class="btn-print">🖨️ طباعة الفاتورة (PDF)</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>جميع الحقوق محفوظة © 2026 متجر Rozakitchendz · بإشراف صادق دحمري</p>
+      <p style="margin-top: 4px;">توصيل لـ 69 ولاية جزائرية · الدفع عند الاستلام بعد المعاينة</p>
+    </div>
+  </footer>
+
+  <div class="toast-social-proof" id="social-toast">
+    <div class="toast-icon">🛍️</div>
+    <div class="toast-content">
+      <span class="toast-name" id="toast-title">فاطمة الزهراء (وهران)</span>
+      <span>طلبت للتو قلاية فيليبس سمارت XXL الأوروبية</span>
+      <div class="toast-time" id="toast-time">● منذ دقيقة واحدة</div>
+    </div>
+  </div>
+
+  <div class="mobile-sticky-bar">
+    <div>
+      <span style="font-size: 10px; color: var(--text-muted); display: block;">الدفع بعد المعاينة</span>
+      <strong style="color: var(--primary); font-size: 16px;" id="sticky-bar-price">14,800 دج</strong>
+    </div>
+    <a href="#order-form" class="btn-header-cta" style="padding: 10px 20px;">اطلب الآن</a>
+  </div>
+
+  <script>
+    const CONFIG = {
+      META_PIXEL_ID: 'YOUR_META_PIXEL_ID',
+      TIKTOK_PIXEL_ID: 'YOUR_TIKTOK_PIXEL_ID',
+      FORMSPREE_ENDPOINT: 'https://formspree.io/f/mqaeveoq',
+      MERCHANT_PHONE: '0554921830',
+      MERCHANT_EMAIL: 'dahmrisadik60@gmail.com',
+      SINGLE_PRICE: 14800,
+      DUO_PRICE: 26900,
+    };
+
+    const WILAYAS = [
+      { code: 1, name: "أدرار", home: 800, desk: 500 },
+      { code: 2, name: "الشلف", home: 500, desk: 350 },
+      { code: 3, name: "الأغواط", home: 650, desk: 450 },
+      { code: 4, name: "أم البواقي", home: 550, desk: 400 },
+      { code: 5, name: "باتنة", home: 550, desk: 350 },
+      { code: 6, name: "بجاية", home: 500, desk: 350 },
+      { code: 7, name: "بسكرة", home: 600, desk: 400 },
+      { code: 8, name: "بشار", home: 750, desk: 500 },
+      { code: 9, name: "البليدة", home: 400, desk: 250 },
+      { code: 10, name: "البويرة", home: 450, desk: 300 },
+      { code: 11, name: "تمنراست", home: 900, desk: 600 },
+      { code: 12, name: "تبسة", home: 600, desk: 400 },
+      { code: 13, name: "تلمسان", home: 550, desk: 350 },
+      { code: 14, name: "تيارت", home: 550, desk: 350 },
+      { code: 15, name: "تيزي وزو", home: 450, desk: 300 },
+      { code: 16, name: "الجزائر العاصمة", home: 400, desk: 250 },
+      { code: 17, name: "الجلفة", home: 600, desk: 400 },
+      { code: 18, name: "جيجل", home: 550, desk: 350 },
+      { code: 19, name: "سطيف", home: 500, desk: 350 },
+      { code: 20, name: "سعيدة", home: 600, desk: 400 },
+      { code: 21, name: "سكيكدة", home: 550, desk: 350 },
+      { code: 22, name: "سيدي بلعباس", home: 550, desk: 350 },
+      { code: 23, name: "عنابة", home: 500, desk: 350 },
+      { code: 24, name: "قالمة", home: 550, desk: 350 },
+      { code: 25, name: "قسنطينة", home: 500, desk: 350 },
+      { code: 26, name: "المدية", home: 450, desk: 300 },
+      { code: 27, name: "مستغانم", home: 500, desk: 350 },
+      { code: 28, name: "المسيلة", home: 550, desk: 350 },
+      { code: 29, name: "معسكر", home: 550, desk: 350 },
+      { code: 30, name: "ورقلة", home: 700, desk: 450 },
+      { code: 31, name: "وهران", home: 450, desk: 300 },
+      { code: 32, name: "البيض", home: 700, desk: 450 },
+      { code: 33, name: "إليزي", home: 900, desk: 600 },
+      { code: 34, name: "برج بوعريريج", home: 500, desk: 350 },
+      { code: 35, name: "بومرداس", home: 400, desk: 250 },
+      { code: 36, name: "الطارف", home: 600, desk: 400 },
+      { code: 37, name: "تندوف", home: 950, desk: 650 },
+      { code: 38, name: "تيسمسيلت", home: 600, desk: 400 },
+      { code: 39, name: "الوادي", home: 650, desk: 450 },
+      { code: 40, name: "خنشلة", home: 600, desk: 400 },
+      { code: 41, name: "سوق أهراس", home: 600, desk: 400 },
+      { code: 42, name: "تيبازة", home: 400, desk: 250 },
+      { code: 43, name: "ميلة", home: 550, desk: 350 },
+      { code: 44, name: "عين الدفلى", home: 450, desk: 300 },
+      { code: 45, name: "النعامة", home: 750, desk: 500 },
+      { code: 46, name: "عين تموشنت", home: 550, desk: 350 },
+      { code: 47, name: "غرداية", home: 650, desk: 450 },
+      { code: 48, name: "غليزان", home: 500, desk: 350 },
+      { code: 49, name: "المغير", home: 700, desk: 450 },
+      { code: 50, name: "المنيعة", home: 750, desk: 500 },
+      { code: 51, name: "أولاد جلال", home: 650, desk: 450 },
+      { code: 52, name: "برج باجي مختار", home: 950, desk: 650 },
+      { code: 53, name: "بني عباس", home: 800, desk: 550 },
+      { code: 54, name: "تيميمون", home: 800, desk: 550 },
+      { code: 55, name: "تقرت", home: 700, desk: 450 },
+      { code: 56, name: "جانت", home: 950, desk: 650 },
+      { code: 57, name: "عين صالح", home: 850, desk: 600 },
+      { code: 58, name: "عين قزام", home: 950, desk: 650 },
+      { code: 59, name: "آفلو", home: 650, desk: 450 },
+      { code: 60, name: "بريكة", home: 550, desk: 350 },
+      { code: 61, name: "قصر الشلالة", home: 550, desk: 350 },
+      { code: 62, name: "مسعد", home: 600, desk: 400 },
+      { code: 63, name: "عين وسارة", home: 550, desk: 350 },
+      { code: 64, name: "بوسعادة", home: 550, desk: 350 },
+      { code: 65, name: "الأبيض سيدي الشيخ", home: 700, desk: 450 },
+      { code: 66, name: "شلغوم العيد", home: 550, desk: 350 },
+      { code: 67, name: "خميس مليانة", home: 450, desk: 300 },
+      { code: 68, name: "فرندة", home: 550, desk: 350 },
+      { code: 69, name: "العلمة", home: 500, desk: 350 },
+    ];
+
+    let currentOffer = 'single';
+    let currentDelivery = 'home';
+    let selectedWilaya = WILAYAS[15];
+
+    const wilayaSelect = document.getElementById('wilaya-select');
+    WILAYAS.forEach((w) => {
+      const opt = document.createElement('option');
+      opt.value = w.code;
+      opt.textContent = `${w.code} - ولاية ${w.name}`;
+      if (w.code === 16) opt.selected = true;
+      wilayaSelect.appendChild(opt);
+    });
+
+    function updateSummary() {
+      const isDuo = currentOffer === 'duo';
+      const prodPrice = isDuo ? CONFIG.DUO_PRICE : CONFIG.SINGLE_PRICE;
+      const deliveryFee = isDuo ? 0 : (currentDelivery === 'home' ? selectedWilaya.home : selectedWilaya.desk);
+      const total = prodPrice + deliveryFee;
+
+      document.getElementById('summary-prod-price').textContent = `${prodPrice.toLocaleString('ar-DZ')} دج`;
+      document.getElementById('summary-deliv-fee').textContent = deliveryFee === 0 ? 'شحن مجاني (0 دج)' : `${deliveryFee} دج`;
+      document.getElementById('summary-total-price').textContent = `${total.toLocaleString('ar-DZ')} دج`;
+      document.getElementById('sticky-bar-price').textContent = `${total.toLocaleString('ar-DZ')} دج`;
+
+      document.getElementById('home-fee-label').textContent = isDuo ? 'مجاني (0 دج)' : `${selectedWilaya.home} دج`;
+      document.getElementById('desk-fee-label').textContent = isDuo ? 'مجاني (0 دج)' : `${selectedWilaya.desk} دج`;
+    }
+
+    function selectOffer(type) {
+      currentOffer = type;
+      document.getElementById('card-single').classList.toggle('active', type === 'single');
+      document.getElementById('card-duo').classList.toggle('active', type === 'duo');
+      updateSummary();
+    }
+
+    function setDeliveryType(type) {
+      currentDelivery = type;
+      document.getElementById('btn-delivery-home').classList.toggle('active', type === 'home');
+      document.getElementById('btn-delivery-desk').classList.toggle('active', type === 'desk');
+      updateSummary();
+    }
+
+    function handleWilayaChange() {
+      const code = parseInt(wilayaSelect.value, 10);
+      selectedWilaya = WILAYAS.find((w) => w.code === code) || WILAYAS[15];
+      updateSummary();
+    }
+
+    const phoneInput = document.getElementById('cust-phone');
+    const phoneError = document.getElementById('phone-error');
+    const nameInput = document.getElementById('cust-name');
+    const nameError = document.getElementById('name-error');
+    const communeInput = document.getElementById('cust-commune');
+    const communeError = document.getElementById('commune-error');
+    const form = document.getElementById('purchase-form');
+
+    function validatePhone(value) {
+      const clean = value.replace(/\D/g, '');
+      return /^(05|06|07)\d{8}$/.test(clean);
+    }
+
+    phoneInput.addEventListener('input', (e) => {
+      const clean = e.target.value.replace(/\D/g, '').slice(0, 10);
+      e.target.value = clean;
+      if (clean.length > 0 && !validatePhone(clean)) {
+        phoneInput.classList.add('error');
+        phoneError.classList.add('visible');
+      } else {
+        phoneInput.classList.remove('error');
+        phoneError.classList.remove('visible');
+      }
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = nameInput.value.trim();
+      const phone = phoneInput.value.trim();
+      const commune = communeInput.value.trim();
+      const address = document.getElementById('cust-address').value.trim();
+
+      let valid = true;
+      if (!name) { nameInput.classList.add('error'); nameError.classList.add('visible'); valid = false; }
+      else { nameInput.classList.remove('error'); nameError.classList.remove('visible'); }
+
+      if (!validatePhone(phone)) { phoneInput.classList.add('error'); phoneError.classList.add('visible'); valid = false; }
+      else { phoneInput.classList.remove('error'); phoneError.classList.remove('visible'); }
+
+      if (!commune) { communeInput.classList.add('error'); communeError.classList.add('visible'); valid = false; }
+      else { communeInput.classList.remove('error'); communeError.classList.remove('visible'); }
+
+      if (!valid) return;
+
+      const isDuo = currentOffer === 'duo';
+      const prodPrice = isDuo ? CONFIG.DUO_PRICE : CONFIG.SINGLE_PRICE;
+      const deliveryFee = isDuo ? 0 : (currentDelivery === 'home' ? selectedWilaya.home : selectedWilaya.desk);
+      const total = prodPrice + deliveryFee;
+      const orderId = `ROZA-${Math.floor(1000 + Math.random() * 9000)}`;
+
+      document.getElementById('rcpt-id').textContent = `#${orderId}`;
+      document.getElementById('rcpt-name').textContent = name;
+      document.getElementById('rcpt-phone').textContent = phone;
+      document.getElementById('rcpt-location').textContent = `ولاية ${selectedWilaya.name} (${commune}) ${address ? '· ' + address : ''}`;
+      document.getElementById('rcpt-type').textContent = currentDelivery === 'home' ? 'توصيل لباب المنزل' : 'استلام من مكتب التوصيل';
+      document.getElementById('rcpt-pack').textContent = isDuo ? 'عرض التوفير الذكي (قطعتان + شحن مجاني)' : 'قطعة واحدة';
+      document.getElementById('rcpt-shipping').textContent = deliveryFee === 0 ? 'شحن مجاني (0 دج)' : `${deliveryFee} دج`;
+      document.getElementById('rcpt-total').textContent = `${total.toLocaleString('ar-DZ')} دج`;
+
+      const waMsg = encodeURIComponent(
+        `مرحباً متجر Rozakitchendz (صادق دحمري)،\n` +
+        `أكدت طلبي عبر الموقع!\n` +
+        `رقم الطلب: #${orderId}\n` +
+        `الاسم: ${name}\n` +
+        `الهاتف: ${phone}\n` +
+        `الولاية: ولاية ${selectedWilaya.name} (${commune})\n` +
+        `العرض: ${isDuo ? 'قطعتان (شحن مجاني)' : 'قطعة واحدة'}\n` +
+        `المبلغ عند الاستلام: ${total} دج.\nيرجى تأكيد الشحن وشكراً!`
+      );
+      document.getElementById('rcpt-wa-btn').href = `https://wa.me/213${CONFIG.MERCHANT_PHONE.replace(/^0/, '')}?text=${waMsg}`;
+
+      // Dispatch to Formspree for instant email forwarding
+      if (CONFIG.FORMSPREE_ENDPOINT) {
+        fetch(CONFIG.FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            subject: `طلب جديد #${orderId} - ${name} (${selectedWilaya.name})`,
+            orderId: orderId,
+            customerName: name,
+            customerPhone: phone,
+            wilaya: selectedWilaya.name,
+            commune: commune,
+            address: address,
+            pack: isDuo ? 'عرض التوفير الذكي (قطعتان + شحن مجاني)' : 'قطعة واحدة',
+            deliveryType: currentDelivery === 'home' ? 'توصيل للمنزل' : 'استلام من مكتب التوصيل',
+            totalPrice: `${total} DZD`,
+            merchantEmail: CONFIG.MERCHANT_EMAIL
+          })
+        }).catch(() => {});
+      }
+
+      form.style.display = 'none';
+      const rcpt = document.getElementById('official-receipt');
+      rcpt.style.display = 'block';
+      rcpt.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    function startCountdown() {
+      let end = Date.now() + (11 * 3600 + 45 * 60) * 1000;
+      setInterval(() => {
+        const diff = Math.max(0, Math.floor((end - Date.now()) / 1000));
+        document.getElementById('cd-hours').textContent = String(Math.floor(diff / 3600)).padStart(2, '0');
+        document.getElementById('cd-minutes').textContent = String(Math.floor((diff % 3600) / 60)).padStart(2, '0');
+        document.getElementById('cd-seconds').textContent = String(diff % 60).padStart(2, '0');
+      }, 1000);
+    }
+    startCountdown();
+
+    const TOASTS = ["فاطمة (وهران)", "محمد (الجزائر)", "نسرين (سطيف)", "سارة (قسنطينة)"];
+    let tIdx = 0;
+    setInterval(() => {
+      const toast = document.getElementById('social-toast');
+      document.getElementById('toast-title').textContent = TOASTS[tIdx];
+      toast.classList.add('show');
+      tIdx = (tIdx + 1) % TOASTS.length;
+      setTimeout(() => toast.classList.remove('show'), 4000);
+    }, 11000);
+
+    updateSummary();
+  </script>
+</body>
+</html>
