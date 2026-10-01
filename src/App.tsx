@@ -27,7 +27,7 @@ import { AdminDrawer } from './components/AdminDrawer';
 import { initTrackingPixels } from './utils/tracking';
 
 export default function App() {
-  // Store Owner profile state (persisted with rozakitchendz in rose theme)
+  // Store Owner profile state
   const [owner, setOwner] = useState<StoreOwner>(() => {
     const saved = localStorage.getItem('rozakitchendz_owner');
     if (saved) {
@@ -44,7 +44,7 @@ export default function App() {
     return initialStoreOwner;
   });
 
-  // Current Active Product Configuration: Defaults to European Smart Airfryer XXL
+  // Current Active Product Configuration
   const [product, setProduct] = useState<ProductConfig>(() => {
     const saved = localStorage.getItem('rozakitchendz_product_eu');
     if (saved) {
@@ -69,13 +69,12 @@ export default function App() {
     }
   }, [product.id, product.variants]);
 
-  // Orders State (Cleaned & Persisted: Real Orders only)
+  // Orders State
   const [orders, setOrders] = useState<CustomerOrder[]>(() => {
-    const saved = localStorage.getItem('rozakitchendz_orders_live');
+    const saved = localStorage.getItem('rozakitchendz_orders_live') || localStorage.getItem('rozakitchendz_orders_eu');
     if (saved) {
       try {
         const parsed: CustomerOrder[] = JSON.parse(saved);
-        // Exclude dummy test orders if any
         return parsed.filter(
           (o) =>
             !o.customerName.includes('نادية') &&
@@ -86,11 +85,10 @@ export default function App() {
         // fallback
       }
     }
-    // Clean initial state with zero dummy orders
     return [];
   });
 
-  // Reviews State (persisted)
+  // Reviews State
   const [reviews, setReviews] = useState<CustomerReview[]>(() => {
     const saved = localStorage.getItem('rozakitchendz_reviews_eu');
     if (saved) {
@@ -103,10 +101,30 @@ export default function App() {
     return initialReviews;
   });
 
+  // Protected Admin State
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   // Modals Visibility
   const [isOrdersOpen, setIsOrdersOpen] = useState(false);
   const [isCustomizerOpen, setIsCustomizerOpen] = useState(false);
   const [isAdminOpen, setIsAdminOpen] = useState(false);
+
+  // Keyboard shortcut (F2) to unlock Admin Mode
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'F2') {
+        const pass = prompt('أدخل كلمة السر للوصول إلى لوحة الإدارة والطلبات:');
+        if (pass === '1234') { // كلمة السر الافتراضية
+          setIsAuthenticated(true);
+          setIsOrdersOpen(true);
+        } else if (pass !== null) {
+          alert('كلمة السر غير صحيحة!');
+        }
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   // Initialize Meta & TikTok tracking pixels on mount
   useEffect(() => {
@@ -123,7 +141,7 @@ export default function App() {
   }, [product]);
 
   useEffect(() => {
-    localStorage.setItem('rozakitchendz_orders_eu', JSON.stringify(orders));
+    localStorage.setItem('rozakitchendz_orders_live', JSON.stringify(orders));
   }, [orders]);
 
   useEffect(() => {
@@ -161,15 +179,29 @@ export default function App() {
     }
   };
 
+  const verifyAdminAccess = (action: () => void) => {
+    if (isAuthenticated) {
+      action();
+    } else {
+      const pass = prompt('أدخل كلمة السر للوصول للإدارة:');
+      if (pass === '1234') {
+        setIsAuthenticated(true);
+        action();
+      } else if (pass !== null) {
+        alert('كلمة السر غير صحيحة!');
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#0d080b] text-neutral-100 flex flex-col font-sans selection:bg-rose-500/30 selection:text-rose-300">
-      {/* Navigation in Pink/Rose Theme */}
+      {/* Navigation (Customer Only View) */}
       <Navbar
         owner={owner}
-        onOpenOrders={() => setIsOrdersOpen(true)}
-        onOpenProductCustomizer={() => setIsCustomizerOpen(true)}
-        onOpenAdmin={() => setIsAdminOpen(true)}
-        ordersCount={orders.length}
+        onOpenOrders={() => verifyAdminAccess(() => setIsOrdersOpen(true))}
+        onOpenProductCustomizer={() => verifyAdminAccess(() => setIsCustomizerOpen(true))}
+        onOpenAdmin={() => verifyAdminAccess(() => setIsAdminOpen(true))}
+        ordersCount={isAuthenticated ? orders.length : 0}
       />
 
       {/* Main Landing Page Content */}
@@ -181,7 +213,7 @@ export default function App() {
           selectedVariant={selectedVariant}
           onSelectVariant={setSelectedVariant}
           onOrderClick={scrollToOrderForm}
-          onOpenProductCustomizer={() => setIsCustomizerOpen(true)}
+          onOpenProductCustomizer={() => verifyAdminAccess(() => setIsCustomizerOpen(true))}
         />
 
         {/* Features Section */}
@@ -215,9 +247,9 @@ export default function App() {
       {/* Footer */}
       <Footer
         owner={owner}
-        onOpenOrders={() => setIsOrdersOpen(true)}
-        onOpenProductCustomizer={() => setIsCustomizerOpen(true)}
-        onOpenAdmin={() => setIsAdminOpen(true)}
+        onOpenOrders={() => verifyAdminAccess(() => setIsOrdersOpen(true))}
+        onOpenProductCustomizer={() => verifyAdminAccess(() => setIsCustomizerOpen(true))}
+        onOpenAdmin={() => verifyAdminAccess(() => setIsAdminOpen(true))}
       />
 
       {/* Live Social Proof Sales Popups */}
@@ -230,38 +262,40 @@ export default function App() {
         owner={owner}
       />
 
-      {/* Space 1: Dedicated Orders Manager ("بلاصة تدخلني فيها الطلبات") */}
-      <OrdersModal
-        isOpen={isOrdersOpen}
-        onClose={() => setIsOrdersOpen(false)}
-        orders={orders}
-        owner={owner}
-        onUpdateOrderStatus={handleUpdateOrderStatus}
-        onDeleteOrder={handleDeleteOrder}
-      />
+      {/* Admin Modals (Only Accessible After Authentication) */}
+      {isAuthenticated && (
+        <>
+          <OrdersModal
+            isOpen={isOrdersOpen}
+            onClose={() => setIsOrdersOpen(false)}
+            orders={orders}
+            owner={owner}
+            onUpdateOrderStatus={handleUpdateOrderStatus}
+            onDeleteOrder={handleDeleteOrder}
+          />
 
-      {/* Space 2: Dedicated Product Customizer ("بلاصة نغير فيها كل منتج وش نحب ندير وش نبدل") */}
-      <ProductCustomizerModal
-        isOpen={isCustomizerOpen}
-        onClose={() => setIsCustomizerOpen(false)}
-        product={product}
-        onSaveProduct={handleSaveProduct}
-      />
+          <ProductCustomizerModal
+            isOpen={isCustomizerOpen}
+            onClose={() => setIsCustomizerOpen(false)}
+            product={product}
+            onSaveProduct={handleSaveProduct}
+          />
 
-      {/* Admin Settings Drawer */}
-      <AdminDrawer
-        isOpen={isAdminOpen}
-        onClose={() => setIsAdminOpen(false)}
-        owner={owner}
-        onUpdateOwner={setOwner}
-        orders={orders}
-        onUpdateOrderStatus={handleUpdateOrderStatus}
-        onDeleteOrder={handleDeleteOrder}
-        basePrice={product.basePrice}
-        onUpdateBasePrice={(newPrice) =>
-          setProduct((prev) => ({ ...prev, basePrice: newPrice }))
-        }
-      />
+          <AdminDrawer
+            isOpen={isAdminOpen}
+            onClose={() => setIsAdminOpen(false)}
+            owner={owner}
+            onUpdateOwner={setOwner}
+            orders={orders}
+            onUpdateOrderStatus={handleUpdateOrderStatus}
+            onDeleteOrder={handleDeleteOrder}
+            basePrice={product.basePrice}
+            onUpdateBasePrice={(newPrice) =>
+              setProduct((prev) => ({ ...prev, basePrice: newPrice }))
+            }
+          />
+        </>
+      )}
     </div>
   );
 }
